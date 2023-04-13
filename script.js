@@ -77,18 +77,21 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
-    for (let index = 0; index < 5; index++) {
-        console.log(index)
-        if (playRound(getPlayerChoice(), getComputerChoice()) == "win") {
-            playerWins += 1
-            continue;
-        }
-        else if (playRound(getPlayerChoice(), getComputerChoice()) == "lose") {
-            computerWins += 1
-            continue;
-        }
-        else if (playRound(getPlayerChoice(), getComputerChoice()) == "tie") {
-            continue;            
+    for (let index = 0; index < 5; index++) {        
+        switch (playRound(getPlayerChoice(), getComputerChoice())) {
+            case "win":
+                playerWins += 1
+                break;
+            
+            case "lose":
+                computerWins += 1
+                break;
+    
+            case "tie":
+                break;
+        
+            default:
+                break;
         }
     }
     
